@@ -1,0 +1,158 @@
+body {
+  background: gray;
+  font-family: 'Open Sans', sans-serif;
+  color: #ccc;
+  margin: 0px; 
+
+}
+
+#container {
+  float: left;
+  background-color: blue;
+  width: 100%;
+  /*padding: 20px;*/
+}
+
+#header h1 { 
+  background-color: red;
+  text-align: center;
+  margin: 0;
+}
+
+#player {
+  background-color: green;
+  border: 1px solid;
+  border-radius: 25px;
+  position:relative;
+  text-align: center;
+  float:left;
+  width: 200px;
+}
+
+#player .title {
+  background-color: yellow;
+  height: 40px;
+  line-height: 40px;
+}
+
+#player .gui {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#player .gui ul li{
+  list-style:none;
+}
+
+#player .gui ul li a {
+  position:relative;
+  float:left;
+  /*cursor:pointer;*/
+}
+
+
+#player .gui a#playBtn_1,
+#player .gui a#stopBtn_1
+{
+  display: block;
+  width: 125px;
+  height: 125px;
+}
+#player .gui a#playBtn_2,
+#player .gui a#stopBtn_2
+{
+  display: block;
+  width: 125px;
+  height: 125px;
+}
+#player .gui a#playBtn_3,
+#player .gui a#stopBtn_3
+{
+  display: block;
+  width: 125px;
+  height: 125px;
+}
+#player .gui a#playBtn_4,
+#player .gui a#stopBtn_4
+{
+  display: block;
+  width: 125px;
+  height: 125px;
+}
+#player .gui a#playBtn_5,
+#player .gui a#stopBtn_5
+{
+  display: block;
+  width: 125px;
+  height: 125px;
+}
+#player .gui a#playBtn_6,
+#player .gui a#stopBtn_6
+{
+  display: block;
+  width: 125px;
+  height: 125px;
+}
+
+
+#player .gui a#playBtn_1 {
+  background: url("image/play_1.png") 0 0 no-repeat;
+}
+#player .gui a#stopBtn_1 {
+  background: url("image/stop_1.png") 0 0 no-repeat;
+  /*position: absolute;*/
+}
+#player .gui a#playBtn_2 {
+  background: url("image/play_2.png") 0 0 no-repeat;
+}
+#player .gui a#stopBtn_2 {
+  background: url("image/stop_2.png") 0 0 no-repeat;
+}
+#player .gui a#playBtn_3 {
+  background: url("image/play_3.png") 0 0 no-repeat;
+}
+#player .gui a#stopBtn_3 {
+  background: url("image/stop_3.png") 0 0 no-repeat;
+}
+#player .gui a#playBtn_4 {
+  background: url("image/play_4.png") 0 0 no-repeat;
+}
+#player .gui a#stopBtn_4 {
+  background: url("image/stop_4.png") 0 0 no-repeat;
+}
+#player .gui a#playBtn_5 {
+  background: url("image/play_5.png") 0 0 no-repeat;
+}
+#player .gui a#stopBtn_5 {
+  background: url("image/stop_5.png") 0 0 no-repeat;
+}
+#player .gui a#playBtn_6 {
+  background: url("image/play_6.png") 0 0 no-repeat;
+}
+#player .gui a#stopBtn_6 {
+  background: url("image/stop_6.png") 0 0 no-repeat;
+}
+
+
+input[type='range'] {
+  -webkit-appearance: none;
+  background-color: gray;
+  height: 4px;
+  border-radius: 15px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 0 3px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: red;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
+}

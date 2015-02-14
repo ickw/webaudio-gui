@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>SoundCloud + Web Audio API test</title>
+<script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script src="http://connect.soundcloud.com/sdk.js"></script>
+<script>
+$(function(){
+
+var default_url = 'https://soundcloud.com/[artist_name]/[track_name]';
+
+// http://soundcloud.com/you/apps/new で取得
+var client_id = 'CLIENT_ID';
+
+// SoundCloud API initialize
+SC.initialize({client_id: client_id});
+
+var audio_element = new Audio();
+
+// get AudioContext
+var audio_context = new AudioContext();
+
+// generate media element node
+var audio_source = audio_context.createMediaElementSource(audio_element);
+
+var gain = audio_context.createGain();
+
+// generate biquad filter node
+var biquadFilter = audio_context.createBiquadFilter();
+
+$('#range_gain')
+.val('0.5')
+.on('input', function(){
+    gain.gain.value = $('#range_gain').val();
+    $('#text_gain').text($(this).val());
+    //alert($(this).val());
+})
+.trigger('input');
+
+$('#range_freq')
+.val('350')
+.on('input', function(){
+    biquadFilter.frequency.value = $(this).val();
+    $('#text_freq').text($(this).val());
+    //alert($(this).val());
+})
+.trigger('input');
+
+$('#range_reso')
+.val('0.707')
+.on('input', function(){
+    biquadFilter.Q.value = $(this).val();
+    $('#text_reso').text($(this).val());
+    //alert($(this).val());
+})
+.trigger('input');
+
+$('#select_type')
+.change(function(){
+    biquadFilter.type = $(this).val();
+    //alert($(this).val());
+});
+
+$('#text_soundcloud_url').val(default_url);
+
+$('#button_play')
+.val('Play')
+.click(function(){
+	//alert($('#text_soundcloud_url').val());
+    if( $(this).val() == 'Play' ){
+    	//alert("1");
+        SC.get('/resolve', { url: $('#text_soundcloud_url').val() }, function(track) {
+        	//alert("2");
+            SC.get('/tracks/' + track.id, { }, function(sound){
+
+                //alert(sound.stream_url);
+
+            	$('#button_play').val('Stop');
+                audio_element.src = sound.stream_url + '?client_id=' + client_id;
+                audio_element.load();
+                audio_element.play();
+            });
+        });
+    }
+    else{
+        audio_element.pause();
+        audio_element.currentTime = 0;
+       $('#button_play').val('Play');
+    }
+});
+
+audio_source.connect(gain);
+gain.connect(biquadFilter);
+biquadFilter.connect(audio_context.destination);
+
+});
+</script>
+</head>
+<body>
+SoundCloud + Web Audio API test (<a href='https://gist.github.com/fukuroder/9a892e6247e946112abb'>source code</a>)
+<hr/>
+<table>
+<tr>
+    <td>
+        URL:
+    </td>
+    <td>
+        <input type='text' id='text_soundcloud_url' style='width:400px;' autocomplete='off' />
+    </td>
+    <td>
+        <input type='button' id='button_play' style='width:50px;' autocomplete='off' />
+    </td>
+</tr>
+<tr>
+    <td>
+        Gain:
+    </td>
+    <td>
+        <input id='range_gain' type='range' style='width:400px;' min='0' max='1' step='0.001' autocomplete='off' />
+    </td>
+    <td>
+        <span id='text_gain'></span>
+    </td>
+</tr>
+<tr>
+    <td>
+        Frequency(Hz):
+    </td>
+    <td>
+        <input id='range_freq' type='range' style='width:400px;' min='10' max='22050' step='0.001' autocomplete='off' />
+    </td>
+    <td>
+        <span id='text_freq'></span>
+    </td>
+</tr>
+<tr>
+    <td>
+        Resonance:
+    </td>
+    <td>
+        <input id='range_reso' type='range' style='width:400px;' min='0.707' max='20' step='0.001' autocomplete='off' />
+    </td>
+    <td>
+        <span id='text_reso'></span>
+    </td>
+</tr>
+<tr>
+    <td>
+        Type:
+    </td>
+    <td>
+        <select id='select_type' size='1' style='width:400px;'>
+            <option value='lowpass' selected>lowpass</option>
+            <option value='highpass'>highpass</option>
+            <option value='bandpass'>bandpass</option>
+        </select>
+    </td>
+</tr>
+</table>
+</body>
+</html>
+
+

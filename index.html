@@ -1,0 +1,137 @@
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <title>JAL</title>
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="lib/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/shared.js"></script>
+    <script type="text/javascript" src="js/volume-sample.js"></script>
+    <script>
+      var sample_1 = new VolumeSample('raining.mp3');
+      var sample_2 = new VolumeSample('wave2.mp3');
+      var sample_3 = new VolumeSample('yukiarasi.mp3');
+      var sample_4 = new VolumeSample('water-bird.mp3');
+      var sample_5 = new VolumeSample('thunder.mp3');
+      var sample_6 = new VolumeSample('tukutukuboshi.mp3');
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17930798-28']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      
+      <div id="header">
+        <h1>ヘッダー</h1>
+      </div>
+    
+      <!-- START 1 -->
+      <div id="player"> 
+        <div class="title"><p>音源タイトル 1</p></div>
+        <div class="gui">
+          <ul>
+            <li><a id="playBtn_1" href="javascript:;" onclick="sample_1.toggle();" tabindex="1"></a></li>
+            <li><a id="stopBtn_1" href="javascript:;" onclick="sample_1.toggle();" tabindex="1"></a></li>
+          </ul>
+          <!-- <p><input class="playBtn" type="button" onclick="sample.toggle();" value="Play/Pause"></p> -->
+          <p><input type="range" min="0" max="100" value="70" tabindex="1" onchange="sample_1.changeVolume(this);"></p>
+        </div>
+      </div>
+      <!-- END -->
+
+
+      <!-- START 2 -->
+      <div id="player"> 
+        <div class="title"><p>音源タイトル 2</p></div>
+        <div class="gui">
+          <ul>
+            <li><a id="playBtn_2" href="javascript:;" onclick="sample_2.toggle();" tabindex="2"></a></li>
+            <li><a id="stopBtn_2" href="javascript:;" onclick="sample_2.toggle();" tabindex="2"></a></li>
+          </ul>
+          <!-- <p><input class="playBtn" type="button" onclick="sample.toggle();" value="Play/Pause"></p> -->
+          <p><input type="range" min="0" max="100" value="70" tabindex="2" onchange="sample_2.changeVolume(this);"></p>
+        </div>
+      </div>
+      <!-- END -->
+
+
+      <!-- START 3 -->
+      <div id="player"> 
+        <div class="title"><p>音源タイトル 3</p></div>
+        <div class="gui">
+          <ul>
+            <li><a id="playBtn_3" href="javascript:;" onclick="sample_3.toggle();" tabindex="3"></a></li>
+            <li><a id="stopBtn_3" href="javascript:;" onclick="sample_3.toggle();" tabindex="3"></a></li>
+          </ul>
+          <!-- <p><input class="playBtn" type="button" onclick="sample.toggle();" value="Play/Pause"></p> -->
+          <p><input type="range" min="0" max="100" value="70" tabindex="3" onchange="sample_3.changeVolume(this);"></p>
+        </div>
+      </div>
+      <!-- END -->
+
+
+      <!-- START 4 -->
+      <div id="player"> 
+        <div class="title"><p>音源タイトル 4</p></div>
+        <div class="gui">
+          <ul>
+            <li><a id="playBtn_4" href="javascript:;" onclick="sample_4.toggle();" tabindex="4"></a></li>
+            <li><a id="stopBtn_4" href="javascript:;" onclick="sample_4.toggle();" tabindex="4"></a></li>
+          </ul>
+          <!-- <p><input class="playBtn" type="button" onclick="sample.toggle();" value="Play/Pause"></p> -->
+          <p><input type="range" min="0" max="100" value="70" tabindex="4" onchange="sample_4.changeVolume(this);"></p>
+        </div>
+      </div>
+      <!-- END -->
+
+
+      <!-- START 5 -->
+      <div id="player"> 
+        <div class="title"><p>音源タイトル 5</p></div>
+        <div class="gui">
+          <ul>
+            <li><a id="playBtn_5" href="javascript:;" onclick="sample_5.toggle();" tabindex="5"></a></li>
+            <li><a id="stopBtn_5" href="javascript:;" onclick="sample_5.toggle();" tabindex="5"></a></li>
+          </ul>
+          <!-- <p><input class="playBtn" type="button" onclick="sample.toggle();" value="Play/Pause"></p> -->
+          <p><input type="range" min="0" max="100" value="70" tabindex="5" onchange="sample_5.changeVolume(this);"></p>
+        </div>
+      </div>
+      <!-- END -->
+
+
+      <!-- START 6 -->
+      <div id="player"> 
+        <div class="title"><p>音源タイトル 6</p></div>
+        <div class="gui">
+          <ul>
+            <li><a id="playBtn_6" href="javascript:;" onclick="sample_6.toggle();" tabindex="6"></a></li>
+            <li><a id="stopBtn_6" href="javascript:;" onclick="sample_6.toggle();" tabindex="6"></a></li>
+          </ul>
+          <!-- <p><input class="playBtn" type="button" onclick="sample.toggle();" value="Play/Pause"></p> -->
+          <p><input type="range" min="0" max="100" value="70" tabindex="6" onchange="sample_6.changeVolume(this);"></p>
+        </div>
+      </div>
+      <!-- END -->
+
+    
+    </div>
+  </body>
+</html>
