@@ -19,7 +19,6 @@ var targetId;
 var userVolume = [];
 
  $(document).ready(function(){
-  console.log("ready");
   document.getElementById("playBtn_1").addEventListener("mouseup", focused, false);
   document.getElementById("stopBtn_1").addEventListener("mouseup", focused, false);
   document.getElementById("playBtn_2").addEventListener("mouseup", focused, false);
@@ -44,7 +43,7 @@ var userVolume = [];
  function focused(e) {
   targetId = e.target.tabIndex; 
   targetName = e.target.id;
-  console.log("focused on: " + targetName);
+  //console.log("focused on: " + targetName);
 
   switch(targetName) {
     case "stopBtn_1":
@@ -105,8 +104,8 @@ var userVolume = [];
  }
 
 function VolumeSample(soundName) {
-  var sn = 'http://daiki-ichikawa.sakura.ne.jp/webaudio-test/audio/' + soundName;
-  console.log(sn);
+  var sn = 'audio/' + soundName;
+  //console.log(sn);
 
   loadSounds(this, {
     buffer: sn
@@ -117,7 +116,7 @@ function VolumeSample(soundName) {
 
 VolumeSample.prototype.play = function(element) {
 
-  console.log("playing : " + targetId);
+  //console.log("playing : " + targetId);
 
   this.gainNode = context.createGain();
   this.source = context.createBufferSource();
@@ -130,7 +129,8 @@ VolumeSample.prototype.play = function(element) {
   // Start playback in a loop
   this.source.loop = true;
   // Reset Volume of selected player
-  this.gainNode.gain.value = userVolume[targetId-1];
+  //this.gainNode.gain.volume = userVolume[targetId-1];
+  this.gainNode.gain.currVolume = userVolume[targetId-1];
   // start play
   this.source[this.source.start ? 'start' : 'noteOn'](0);
 

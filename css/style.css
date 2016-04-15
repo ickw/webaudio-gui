@@ -1,26 +1,24 @@
 body {
-  background: gray;
+  background: #66cdaa;
   font-family: 'Open Sans', sans-serif;
-  color: #ccc;
+  color: white;
   margin: 0px; 
-
 }
 
-#container {
-  float: left;
-  background-color: blue;
-  width: 100%;
-  /*padding: 20px;*/
-}
-
-#header h1 { 
-  background-color: red;
+h1 { 
   text-align: center;
   margin: 0;
 }
 
+#container {
+  float: left;
+  background-color: #40e0d0;
+  width: 100%;
+  /*padding: 20px;*/
+}
+
 #player {
-  background-color: green;
+  background-color: #b0e0e6;
   border: 1px solid;
   border-radius: 25px;
   position:relative;
@@ -30,7 +28,6 @@ body {
 }
 
 #player .title {
-  background-color: yellow;
   height: 40px;
   line-height: 40px;
 }
@@ -100,41 +97,41 @@ body {
 
 
 #player .gui a#playBtn_1 {
-  background: url("image/play_1.png") 0 0 no-repeat;
+  background: url("../image/play.png") 0 0 no-repeat;
 }
 #player .gui a#stopBtn_1 {
-  background: url("image/stop_1.png") 0 0 no-repeat;
+  background: url("../image/stop.png") 0 0 no-repeat;
   /*position: absolute;*/
 }
 #player .gui a#playBtn_2 {
-  background: url("image/play_2.png") 0 0 no-repeat;
+  background: url("../image/play.png") 0 0 no-repeat;
 }
 #player .gui a#stopBtn_2 {
-  background: url("image/stop_2.png") 0 0 no-repeat;
+  background: url("../image/stop.png") 0 0 no-repeat;
 }
 #player .gui a#playBtn_3 {
-  background: url("image/play_3.png") 0 0 no-repeat;
+  background: url("../image/play.png") 0 0 no-repeat;
 }
 #player .gui a#stopBtn_3 {
-  background: url("image/stop_3.png") 0 0 no-repeat;
+  background: url("../image/stop.png") 0 0 no-repeat;
 }
 #player .gui a#playBtn_4 {
-  background: url("image/play_4.png") 0 0 no-repeat;
+  background: url("../image/play.png") 0 0 no-repeat;
 }
 #player .gui a#stopBtn_4 {
-  background: url("image/stop_4.png") 0 0 no-repeat;
+  background: url("../image/stop.png") 0 0 no-repeat;
 }
 #player .gui a#playBtn_5 {
-  background: url("image/play_5.png") 0 0 no-repeat;
+  background: url("../image/play.png") 0 0 no-repeat;
 }
 #player .gui a#stopBtn_5 {
-  background: url("image/stop_5.png") 0 0 no-repeat;
+  background: url("../image/stop.png") 0 0 no-repeat;
 }
 #player .gui a#playBtn_6 {
-  background: url("image/play_6.png") 0 0 no-repeat;
+  background: url("../image/play.png") 0 0 no-repeat;
 }
 #player .gui a#stopBtn_6 {
-  background: url("image/stop_6.png") 0 0 no-repeat;
+  background: url("../image/stop.png") 0 0 no-repeat;
 }
 
 
@@ -151,7 +148,7 @@ input[type='range'] {
 input[type='range']::-webkit-slider-thumb {
   vertical-align: middle;
   -webkit-appearance: none;
-  background-color: red;
+  background-color: #d3ffce;
   width: 36px;
   height: 36px;
   border-radius: 36px;
